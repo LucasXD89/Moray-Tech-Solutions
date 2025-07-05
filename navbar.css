@@ -1,0 +1,244 @@
+/* ---------- TOP BAR ---------- */
+.top-bar {
+  background: #0c4a6e;
+  color: #fff;
+  font-size: .85rem;
+}
+.top-container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:6px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.top-container i{margin-right:6px;color:#fff;}
+.top-btn{
+  background:#25d366;
+  color:#fff;
+  padding:4px 14px;
+  border-radius:20px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  text-decoration:none;
+  transition:background .25s;
+}
+.top-btn:hover{background:#1da851;}
+
+/* ---------- NAVBAR PRINCIPAL ---------- */
+.main-nav{
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  width:100%;
+  z-index:999;
+}
+.nav-container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo img{
+  height:48px;
+  object-fit:contain;
+}
+
+/* enlaces */
+.nav-links{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin:0;
+}
+
+.nav-links a{
+  color:#0c4a6e;
+  font-weight:600;
+  text-decoration:none;
+  transition:color .25s;
+}
+.nav-links a:hover{color:#22c55e;}
+
+/* dropdown */
+.has-dropdown{position:relative;}
+.has-dropdown i{font-size:.7rem;margin-left:4px;}
+
+.dropdown-menu{
+  position:absolute;
+  top:120%;
+  left:0;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  border-radius:8px;
+  list-style:none;
+  padding:10px 0;
+  min-width:190px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-10px);
+  transition:opacity .25s, transform .25s;
+}
+
+.dropdown-menu li a{
+  display:block;
+  padding:10px 20px;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.has-dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* ---------- MENÚ MÓVIL ---------- */
+.menu-toggle{
+  background:none;
+  border:none;
+  font-size:1.5rem;
+  color:#0c4a6e;
+  cursor:pointer;
+  display:none;
+}
+
+@media (max-width:768px){
+  .menu-toggle{display:block;}
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:260px;
+    background:#fff;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:80px 30px;
+    gap:20px;
+    box-shadow:-2px 0 10px rgba(0,0,0,.1);
+    transition:right .3s;
+  }
+  .nav-links.open{right:0;}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;box-shadow:none;padding-left:10px;}
+  .has-dropdown:hover .dropdown-menu{transform:none;}
+}
+
+@media (max-width: 480px) {
+  /* TOP BAR */
+  .top-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .top-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  /* NAVBAR */
+  .nav-container {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-links {
+    padding: 60px 20px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px 10px;
+    font-size: 0.95rem;
+  }
+
+  /* MENÚ */
+  .menu-toggle {
+    font-size: 1.4rem;
+  }
+
+  /* QUIÉNES SOMOS */
+  .contenido-qs {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .texto-qs h3 {
+    font-size: 1.3rem;
+  }
+
+  .texto-qs p {
+    font-size: 1rem;
+  }
+
+  .imagen-qs img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* TABS DE SERVICIOS */
+  .tabs-servicios {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tab-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* GRID DE SERVICIOS */
+  .grid-servicios {
+    grid-template-columns: 1fr !important;
+  }
+
+  .item-servicio img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* FAQ */
+  .faq-seccion {
+    padding: 20px;
+  }
+
+  .faq-container details {
+    font-size: 0.95rem;
+  }
+
+  /* CONTACTO */
+  .contact {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .whatsapp-contacto h3 {
+    font-size: 1.1rem;
+  }
+
+  .whatsapp-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
